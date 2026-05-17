@@ -22,7 +22,7 @@ const ThemedApp = () => {
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Provider store={store}>
+      <Provider  store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ThemedApp />
         </PersistGate>
