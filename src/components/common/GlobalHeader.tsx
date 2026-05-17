@@ -3,7 +3,7 @@ import React from 'react';
 import GlobalStatusBar from './GlobalStatusBar';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useThemeColors } from '@/hooks/useThemeColors';
-import { ArrowLeft, Heart, Moon } from 'lucide-react-native';
+import { ArrowLeft, Heart, Moon, Sun } from 'lucide-react-native';
 import Logo from './Logo';
 import { useNavigation } from '@react-navigation/native';
 
@@ -15,7 +15,7 @@ const GlobalHeader = ({
   isWishlist?: boolean;
 }) => {
   const { top } = useSafeAreaInsets();
-  const { colors, toggleColorScheme } = useThemeColors();
+  const { colors, toggleColorScheme, isDark } = useThemeColors();
   const navigation = useNavigation<any>();
 
   return (
@@ -39,7 +39,11 @@ const GlobalHeader = ({
           onPress={() => toggleColorScheme()}
           className="flex-row items-center rounded-full border border-border bg-primary/20 h-12 w-12 justify-center"
         >
-          <Moon size={20} color={colors.primary} fill="transparent" />
+          {isDark ? (
+            <Sun size={20} color={colors.primary} fill="transparent" />
+          ) : (
+            <Moon size={20} color={colors.primary} fill="transparent" />
+          )}
         </Pressable>
         {!isWishlist && (
           <Pressable
