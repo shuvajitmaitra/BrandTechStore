@@ -103,7 +103,11 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
         data={filteredProducts}
         numColumns={2}
         keyExtractor={item => item.id.toString()}
-        contentContainerStyle={{ padding: 0, gap: 10, paddingBottom: 32 }}
+        contentContainerStyle={{
+          paddingHorizontal: 10,
+          gap: 10,
+          paddingBottom: 32,
+        }}
         columnWrapperStyle={{ gap: 0 }}
         showsVerticalScrollIndicator={false}
         refreshControl={
@@ -120,29 +124,31 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
                 BrandTECH Store
               </Text>
             </View>
-            <Text className="text-[52px] font-black leading-[58px] text-foreground">
-              We craft
-            </Text>
-            <View className="mt-2 self-start rounded-[20px] border border-[#6940a7] px-4 py-2">
-              <Text className="text-[52px] font-black leading-[58px] text-primary">
-                innovative
+            <View className="flex-row flex-wrap gap-2 items-center">
+              <Text className="text-5xl font-black text-foreground">
+                We craft
+              </Text>
+              <View className=" self-start border px-2 py-3 border-[#6940a7]">
+                <Text className="text-5xl font-black text-primary">
+                  innovative
+                </Text>
+              </View>
+              <View className=" self-start border px-2 py-3 border-[#ab662d]">
+                <Text className="text-5xl font-black text-[#ffd6ba]">
+                  products
+                </Text>
+              </View>
+              <Text className=" text-5xl font-black text-foreground">that</Text>
+              <Text className=" text-5xl font-black text-foreground">
+                businesses trust
               </Text>
             </View>
-            <View className="mt-2 self-start rounded-[20px] border border-[#ab662d] px-4 py-2">
-              <Text className="text-[52px] font-black leading-[58px] text-[#ffd6ba]">
-                products
-              </Text>
-            </View>
-            <Text className="mt-2 text-[52px] font-black leading-[58px] text-foreground">
-              teams trust
-            </Text>
-            <Text className="mb-6 mt-5 max-w-[95%] text-base leading-7 text-muted-foreground">
-              Browse a darker, sharper product catalog with saved favorites,
-              quick research signals, and a layout inspired by the BrandTECH
-              website.
+            <Text className="mb-6 mt-2 max-w-[95%] text-base leading-7 text-muted-foreground">
+              We help businesses thrive with innovative strategies, smart
+              technology, and data-driven insights. From planning to execution.
             </Text>
             <SearchBar value={searchText} onChangeText={setSearchText} />
-            <View className="mb-6 flex-row gap-3">
+            <View className="flex-row gap-3">
               <View className="flex-1 rounded-[28px] border border-[#6940a7] bg-[#31184e] px-4 py-4">
                 <Text className="text-xs font-semibold uppercase tracking-[2px] text-[#d8b6ff]">
                   Live Catalog

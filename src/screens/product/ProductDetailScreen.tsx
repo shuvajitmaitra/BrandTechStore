@@ -1,9 +1,10 @@
 import React from 'react';
 import { Image, Pressable, ScrollView, Text, View } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { ShieldCheck, Star } from 'lucide-react-native';
+import { ShieldCheck } from 'lucide-react-native';
 import { RootStackParamList } from '../../navigation/types';
 import FavoriteButton from '../../components/product/FavoriteButton';
+import ProductRating from '../../components/product/ProductRating';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { toggleFavorite } from '../../redux/slices/productSlice';
 
@@ -57,16 +58,17 @@ const ProductDetailScreen = ({ route }: ProductDetailScreenProps) => {
         </View>
 
         <View className="mt-5 rounded-[28px] border border-border bg-background px-4 py-4">
-          <View className="flex-row items-center justify-between">
+          <View className="flex-row items-start justify-between gap-3">
             <Text className="text-3xl font-bold text-accent-foreground">
               ${product.price.toFixed(2)}
             </Text>
-            <View className="flex-row items-center rounded-full border border-[#6940a7] bg-[#2a1740] px-3 py-2">
-              <Star size={16} color="#f4b85a" fill="#f4b85a" />
-              <Text className="ml-1 text-sm font-semibold text-[#f3d7a4]">
-                {product.rating.rate.toFixed(1)} from {product.rating.count}
-              </Text>
-            </View>
+            <ProductRating
+              rating={product.rating}
+              iconSize={16}
+              textSizeClassName="text-sm"
+              countSizeClassName="text-sm"
+              className="pt-1"
+            />
           </View>
           <View className="mt-4 flex-row items-center rounded-full border border-[#336f4c] bg-[#1f4a33] px-4 py-3">
             <ShieldCheck size={16} color="#7ef0a1" />
