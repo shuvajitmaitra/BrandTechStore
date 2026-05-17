@@ -18,7 +18,7 @@ const Banner = ({
   const favorites = useAppSelector(state => state.product.favorites);
 
   return (
-    <View className="mt-5">
+    <View className="mt-2">
       <View className="flex-row flex-wrap gap-2 items-center">
         <Text className="text-5xl font-black text-foreground">We craft</Text>
         <Text className="text-5xl font-black text-primary">innovative</Text>
