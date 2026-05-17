@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "BrandTech",
+    "slug": "BhcJobs",
+    "version": "1.0.0",
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "experiments": {
+      "tsconfigPaths": true
+    },
+    "orientation": "portrait",
+    "icon": "./assets/brandtech_logo.jpg",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.shuvajitmaitra.BrandTech"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/brandtech_logo.jpg",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.shuvajitmaitra.BrandTech"
+    }
+  }
+}
