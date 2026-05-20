@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
-import NetInfo, { useNetInfo } from '@react-native-community/netinfo';
+import { useNetInfo } from '@react-native-community/netinfo';
 import { WifiOff } from 'lucide-react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useThemeColors } from '@/hooks/useThemeColors';
 
 const NoInternetBanner = () => {
-  const { top } = useSafeAreaInsets();
   const { colors } = useThemeColors();
   const { isConnected, isInternetReachable } = useNetInfo();
   const [isOffline, setIsOffline] = useState(false);
